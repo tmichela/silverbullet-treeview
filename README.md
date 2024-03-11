@@ -36,19 +36,20 @@ treeview:
   # - "rhs" - right hand side
   # - "bhs" - bottom
   # - "modal" - in a modal
-  position: lhs 
+  position: lhs
+  positionOnMobile: modal
 
-  # Must be > 0. 
+  # Must be > 0.
   # position = "lhs" | "rhs": determines the width of the panel.
-  # position = "modal": sets the margin around the modal window. 
+  # position = "modal": sets the margin around the modal window.
   # position = "bhs": No effect
-  size: 1 
+  size: 1
 
   dragAndDrop:
     # Set to false to disable drag-and-drop
     enabled: true
 
-    # Set to false to disable the confirmation prompt shown when dragging and 
+    # Set to false to disable the confirmation prompt shown when dragging and
     # dropping pages that causes them to be renamed/moved.
     confirmOnRename: true
 ```
@@ -57,7 +58,7 @@ treeview:
 
 ![Screenshot](screenshot-action-button.png)
 
-You can add add a button to the top bar that will toggle the tree view by adding 
+You can add add a button to the top bar that will toggle the tree view by adding
 the following to your `actionButtons` array in your `SETTINGS` page:
 
 ```yaml
@@ -95,7 +96,7 @@ SilverBullet will automatically sync and load the new version of the plug (or sp
 
 The tree component used is Marc Anton Dahmen's [SortableTree](https://marcantondahmen.github.io/sortable-tree) component ([Github Repo](https://github.com/marcantondahmen/sortable-tree)).
 
-Latest build files can be found here (replace them in `assets/sortable-tree` to upgrade): 
+Latest build files can be found here (replace them in `assets/sortable-tree` to upgrade):
 
 - https://unpkg.com/sortable-tree/dist/sortable-tree.js
 - https://unpkg.com/sortable-tree/dist/sortable-tree.css

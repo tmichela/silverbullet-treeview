@@ -47,6 +47,17 @@ export async function showTreeIfEnabled() {
   }
 }
 
+
+/**
+ * Checks if the current browser is running on a mobile device based on the window's inner width.
+ * @returns {boolean} True if the device is a mobile device, otherwise false.
+ */
+function isMobileDevice(): boolean {
+    return window.innerWidth <= 768; // Adjust threshold as needed
+}
+
+
+
 /**
  * Shows the treeview and sets it to enabled.
  */
@@ -96,13 +107,13 @@ export async function showTree() {
   };
 
   await editor.showPanel(
-    config.position,
+    isMobileDevice()? config.positionOnMobile: config.position,
     config.size,
     `
       <html>
       <head>
         <style>
-        ${sortableTreeCss} 
+        ${sortableTreeCss}
         ${plugCss}
         </style>
       </head>
@@ -123,7 +134,7 @@ export async function showTree() {
       </body>
       </html>`,
     `
-      // Workaound until showPanel provides the current theme 
+      // Workaound until showPanel provides the current theme
       document.documentElement.dataset.theme = ${JSON.stringify(theme)};
 
       ${sortableTreeJs}
